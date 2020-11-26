@@ -1,0 +1,14 @@
+{
+  "name": "sia-handshake-gateway",
+  "version": "1.0.0",
+  "description": "Look up txt records on Handshake and proxy to sia.",
+  "main": "./lib/index.js",
+  "scripts": {
+    "start": "node ./lib/index.js"
+  },
+  "author": "Anthony Liu",
+  "license": "ISC",
+  "dependencies": {
+    "http-proxy": "^1.18.1"
+  }
+}
