@@ -15,12 +15,26 @@ NOTE: this is not ready for actual production usage. Was mostly an experiment to
 2. Automatically deploy
 3. Don't crash if there is an unexpected error
 
-## Running
+## Docs
+
+Currently deployed at sia.namebase.io. To use it, set the following two records:
+
+```
+CNAME   a.b.ZONE                sia.namebase.io
+TXT     _contenthash.a.b.ZONE   sia://CONTENT_HASH_HERE
+```
+
+When your browser requests sia.namebase.io with the host a.b.ZONE, the gateway will:
+
+1. Do a DNS lookup for TXT records at _contenthash.a.b.ZONE.hsd.zone to get the sia content hash
+2. Proxy the request to https://siasky.net/CONTENT_HASH
+
+## Development
 
 ```bash
 $(npm bin)/pm2 start all
 
-# these next two are only needed the first time
+# these next two are only needed the first time if you want to run on restart
 $(npm bin)/pm2 save
 $(npm bin)/pm2 startup
 ```
