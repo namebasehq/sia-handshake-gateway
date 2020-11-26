@@ -9,6 +9,7 @@
   "author": "Anthony Liu",
   "license": "ISC",
   "dependencies": {
-    "http-proxy": "^1.18.1"
+    "http-proxy": "^1.18.1",
+    "pm2": "^4.5.0"
   }
 }

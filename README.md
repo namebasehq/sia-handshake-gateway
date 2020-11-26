@@ -18,7 +18,11 @@ NOTE: this is not ready for actual production usage. Was mostly an experiment to
 ## Running
 
 ```bash
-npm run start
+$(npm bin)/pm2 start all
+
+# these next two are only needed the first time
+$(npm bin)/pm2 save
+$(npm bin)/pm2 startup
 ```
 
 ## License
