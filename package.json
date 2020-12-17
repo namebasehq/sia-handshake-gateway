@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "http-proxy": "^1.18.1",
+    "moment": "^2.29.1",
     "pm2": "^4.5.0"
   }
 }
