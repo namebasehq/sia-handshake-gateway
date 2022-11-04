@@ -38,7 +38,3 @@ $(npm bin)/pm2 start all
 $(npm bin)/pm2 save
 $(npm bin)/pm2 startup
 ```
-
-## License
-
-Closed source for now
