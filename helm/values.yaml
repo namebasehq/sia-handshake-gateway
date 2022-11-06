@@ -2,13 +2,13 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
-replicaCount: 1
+replicaCount: 2
 
 image:
   repository: 904267667353.dkr.ecr.us-west-2.amazonaws.com/sia-handshake-gateway
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "6655-6655"
+  tag: "latest"
 
 imagePullSecrets: []
 nameOverride: ""
@@ -41,21 +41,20 @@ service:
   port: 80
 
 ingress:
-  enabled: false
+  enabled: true
   className: ""
   annotations:
     kubernetes.io/ingress.class: "nginx"
-    kubernetes.io/tls-acme: "true"
-    cert-manager.io/cluster-issuer: "letsencrypt-prod"
+    # kubernetes.io/tls-acme: "true"
   hosts:
     - host: sia.namebase.io
       paths:
         - path: /
           pathType: ImplementationSpecific
-  tls:
-    - secretName: sia-namebase-io
-      hosts:
-        - sia.namebase.io
+#  tls:
+#    - secretName: sia-namebase-io
+#      hosts:
+#        - sia.namebase.io
 
 resources:
   # We usually recommend not to specify default resources and to leave this as a conscious
@@ -81,3 +80,5 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+
+siaApiKey: ""
