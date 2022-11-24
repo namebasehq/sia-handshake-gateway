@@ -6,4 +6,3 @@ COPY . .
 
 RUN npm i
 
-ENTRYPOINT node ./lib/index.js
